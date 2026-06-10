@@ -27,7 +27,11 @@ const CONTACT = {
 
 // Image → content mapping (analyzed from photos + matched to CV sections)
 const HERO_IMG = portraitShirt.url;                 // formal shirt+tie headshot → hero
-const ABOUT_IMGS = [varsityBlack.url, argentinaJersey.url, stepsCap.url];
+const ABOUT_IMGS: { src: string; alt: string }[] = [
+  { src: varsityBlack.url, alt: "Charles Omondi in a black varsity jacket with a staff lanyard — earlier ICT support era." },
+  { src: argentinaJersey.url, alt: "Charles Omondi off-duty in an Argentina football jersey at a community event." },
+  { src: stepsCap.url, alt: "Casual portrait of Charles Omondi on a staircase, between professional engagements." },
+];
 
 const skillGroups = [
   {
@@ -63,7 +67,8 @@ const experience = [
     role: "Data Management & Leads Administrator",
     period: "Aug 2025 — Present",
     tag: "Current",
-    img: safaricomShop.url, // professional standing shot, business-casual era
+    img: safaricomShop.url,
+    imgAlt: "Charles Omondi in business-casual attire during his Data Management and Leads Administrator role at Optiven Limited.",
     points: [
       "Managing and organizing large volumes of client data within CRM systems for accuracy and accessibility",
       "Tracking and following up on sales leads to support higher conversion rates",
@@ -77,7 +82,8 @@ const experience = [
     role: "Cybersecurity & Software Engineering Intern",
     period: "Jul 2025 — Sept 2025",
     tag: "Cybersecurity",
-    img: usiuVarsity.url, // varsity jacket with "P" — campus/internship era
+    img: usiuVarsity.url,
+    imgAlt: "Charles Omondi in a university varsity jacket during his cybersecurity and software engineering internship at Coseke Limited.",
     points: [
       "Participated in vulnerability assessments and penetration testing exercises",
       "Supported development and maintenance of secure software solutions",
@@ -91,7 +97,8 @@ const experience = [
     role: "IT & Sales Support",
     period: "Feb 2024 — May 2024",
     tag: "IT Support",
-    img: mpesaOffice.url, // M-Pesa branded shirt in office — Safaricom era
+    img: mpesaOffice.url,
+    imgAlt: "Charles Omondi wearing a green Safaricom M-Pesa branded shirt at a Safaricom retail office during his IT & Sales Support role.",
     points: [
       "Frontline IT support for mobile, network, and device-related issues",
       "Assisted clients in selecting suitable telecommunications products",
@@ -105,7 +112,8 @@ const experience = [
     role: "ICT & Technical Support",
     period: "Prior",
     tag: "ICT",
-    img: varsityBlack.url, // earlier era — black varsity with lanyard/ID
+    img: varsityBlack.url,
+    imgAlt: "Charles Omondi in a black varsity jacket with a staff lanyard from his ICT and technical support role at Jamabinju Food & Catering.",
     points: [
       "Managed ICT infrastructure including computers and network systems",
       "Diagnosed and resolved hardware and software issues",
@@ -119,7 +127,8 @@ const experience = [
     role: "Sales & Brand Ambassador",
     period: "Prior",
     tag: "Sales",
-    img: interviewMic.url, // public-facing, microphone — outreach/brand work
+    img: interviewMic.url,
+    imgAlt: "Charles Omondi speaking into a microphone during a brand outreach event as a Sales & Brand Ambassador for Stan Consulting Group.",
     points: [
       "Represented the brand by promoting services to potential clients",
       "Engaged customers through direct marketing and product presentations",
@@ -133,7 +142,8 @@ const experience = [
     role: "Financial Engineer Agent",
     period: "Prior",
     tag: "Finance",
-    img: stepsCap.url, // casual, between-meetings shot — early career
+    img: stepsCap.url,
+    imgAlt: "Casual portrait of Charles Omondi on a staircase from his early-career period as a Financial Engineer Agent at Jubilee Insurance.",
     points: [
       "Advised clients on financial and insurance products tailored to their needs",
       "Promoted insurance solutions to individuals and organizations",
@@ -152,7 +162,8 @@ const projects = [
       "AI-powered cybersecurity platform for threat detection and anomaly monitoring. Focused on phishing prevention and securing digital infrastructure for educational institutions and the public sector.",
     stack: ["Python", "AI/ML", "Threat Detection", "Phishing Prevention", "Anomaly Monitoring"],
     accent: "from-cyan-400 to-emerald-400",
-    img: techWeekRolls.url, // Technology & Innovation Week — premier project showcase
+    img: techWeekRolls.url,
+    imgAlt: "Charles Omondi showcasing the SalamaNet AI cybersecurity platform at Technology & Innovation Week.",
   },
   {
     title: "USIU Counselling Portal — Vulnerability Assessment",
@@ -161,7 +172,8 @@ const projects = [
       "Conducted automated and manual security testing of the USIU counselling portal. Identified vulnerabilities across the web surface and delivered prioritized remediation recommendations.",
     stack: ["Nmap", "Burp Suite", "Wireshark", "Manual Testing", "Reporting"],
     accent: "from-fuchsia-400 to-cyan-400",
-    img: usiuVarsity.url, // USIU-related engagement
+    img: usiuVarsity.url,
+    imgAlt: "Charles Omondi on the USIU campus during the counselling portal vulnerability assessment engagement.",
   },
   {
     title: "Personal Portfolio Website",
@@ -171,6 +183,7 @@ const projects = [
     stack: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     accent: "from-emerald-400 to-sky-400",
     img: portraitShirt.url,
+    imgAlt: "Studio portrait of Charles Omondi representing the personal portfolio website project.",
   },
 ];
 
@@ -188,16 +201,62 @@ const achievements = [
 ];
 
 const gallery = [
-  { src: portraitShirt.url,  cat: "Professional", caption: "Professional headshot" },
-  { src: mpesaOffice.url,    cat: "Work Experience", caption: "Safaricom · M-Pesa operations" },
-  { src: safaricomShop.url,  cat: "Work Experience", caption: "Field IT & sales support" },
-  { src: usiuVarsity.url,    cat: "Cybersecurity Activities", caption: "USIU engagement period" },
-  { src: varsityBlack.url,   cat: "Leadership & Teamwork", caption: "ICT support era" },
-  { src: interviewMic.url,   cat: "Events & Training", caption: "Brand ambassador outreach" },
-  { src: techWeekRolls.url,  cat: "Events & Training", caption: "Technology & Innovation Week" },
-  { src: stepsCap.url,       cat: "Professional", caption: "Between sessions" },
-  { src: argentinaJersey.url, cat: "Leadership & Teamwork", caption: "Off-duty" },
+  {
+    src: portraitShirt.url,
+    cat: "Hero & Personal Branding",
+    caption: "Professional headshot — Omollo Charles Omondi, Cybersecurity Specialist",
+    alt: "Studio portrait of Omollo Charles Omondi in a formal shirt and tie, used as the portfolio hero image.",
+  },
+  {
+    src: mpesaOffice.url,
+    cat: "Safaricom PLC",
+    caption: "Safaricom PLC · IT & Sales Support, M-Pesa operations (2024)",
+    alt: "Charles Omondi in a green Safaricom M-Pesa branded shirt inside a Safaricom retail office during his IT & Sales Support role.",
+  },
+  {
+    src: safaricomShop.url,
+    cat: "Optiven Limited",
+    caption: "Optiven Limited · Data Management & Leads Administrator (2025–present)",
+    alt: "Charles Omondi in business-casual attire on a client-facing assignment during his Data Management and Leads Administrator role at Optiven Limited.",
+  },
+  {
+    src: usiuVarsity.url,
+    cat: "Projects · USIU Assessment",
+    caption: "USIU Counselling Portal vulnerability assessment engagement",
+    alt: "Charles Omondi in a university varsity jacket on the USIU campus during the counselling portal vulnerability assessment project.",
+  },
+  {
+    src: varsityBlack.url,
+    cat: "Jamabinju Food & Catering",
+    caption: "Jamabinju Food & Catering · ICT & Technical Support era",
+    alt: "Charles Omondi in a black varsity jacket with a staff lanyard, from his earlier ICT and technical support role at Jamabinju Food & Catering.",
+  },
+  {
+    src: interviewMic.url,
+    cat: "Stan Consulting Group",
+    caption: "Stan Consulting Group · Sales & Brand Ambassador outreach",
+    alt: "Charles Omondi speaking into a microphone during a client outreach event as a Sales and Brand Ambassador for Stan Consulting Group.",
+  },
+  {
+    src: techWeekRolls.url,
+    cat: "Projects · SalamaNet AI",
+    caption: "Technology & Innovation Week — SalamaNet AI showcase",
+    alt: "Charles Omondi presenting the SalamaNet AI cybersecurity platform at Technology & Innovation Week.",
+  },
+  {
+    src: stepsCap.url,
+    cat: "Jubilee Insurance",
+    caption: "Jubilee Insurance · Financial Engineer Agent era",
+    alt: "Casual portrait of Charles Omondi wearing a cap on a staircase, from his early-career period as a Financial Engineer Agent at Jubilee Insurance.",
+  },
+  {
+    src: argentinaJersey.url,
+    cat: "Events, Leadership & Activities",
+    caption: "Off-duty — team & community engagement",
+    alt: "Charles Omondi off-duty wearing an Argentina football jersey at a community / team event.",
+  },
 ];
+
 
 export default function Index() {
   const [lightbox, setLightbox] = useState<{ src: string; caption?: string } | null>(null);
@@ -308,7 +367,7 @@ export default function Index() {
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-cyan-500/40 via-blue-400/20 to-fuchsia-500/30 blur-2xl" />
             <div className="relative rounded-[2rem] border border-cyan-400/20 bg-slate-900/40 backdrop-blur-xl p-3 shadow-2xl">
               <button onClick={() => setLightbox({ src: HERO_IMG, caption: "Omollo Charles Omondi" })} className="block w-full overflow-hidden rounded-[1.5rem] aspect-[4/5] group bg-slate-950">
-                <img src={HERO_IMG} alt="Omollo Charles Omondi" loading="eager" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <img src={HERO_IMG} alt="Studio portrait of Omollo Charles Omondi in a formal shirt and tie — Cybersecurity Specialist, Software Engineer and AI Security Researcher based in Nairobi." loading="eager" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
               </button>
               <div className="absolute top-6 left-6 rounded-full bg-slate-950/80 backdrop-blur px-3 py-1 text-[10px] font-mono text-emerald-300 border border-emerald-400/30">● LIVE</div>
               <div className="absolute bottom-6 right-6 rounded-xl bg-slate-950/80 backdrop-blur px-3 py-2 text-[10px] font-mono text-cyan-200 border border-cyan-400/20">
@@ -322,9 +381,9 @@ export default function Index() {
         <Section id="about" eyebrow="01 / about" title="Engineer by training, defender by craft.">
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-10 items-start">
             <div className="grid grid-cols-3 gap-3">
-              {ABOUT_IMGS.map((src, i) => (
-                <button key={src} onClick={() => setLightbox({ src })} className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"}`}>
-                  <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+              {ABOUT_IMGS.map(({ src, alt }, i) => (
+                <button key={src} onClick={() => setLightbox({ src, caption: alt })} className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"}`}>
+                  <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition" />
                 </button>
               ))}
@@ -429,7 +488,7 @@ export default function Index() {
                   onClick={() => setLightbox({ src: e.img, caption: `${e.role} — ${e.company}` })}
                   className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 aspect-[4/3] w-full group"
                 >
-                  <img src={e.img} alt={e.company} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                  <img src={e.img} alt={e.imgAlt ?? `${e.role} at ${e.company}`} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 </button>
                 <div className="ml-12 md:ml-0 rounded-2xl border border-cyan-400/10 bg-slate-900/60 backdrop-blur-xl p-6">
                   <div className="flex items-center justify-between flex-wrap gap-2">
@@ -469,7 +528,7 @@ export default function Index() {
                 }`}
               >
                 <button onClick={() => setLightbox({ src: p.img, caption: p.title })} className="block overflow-hidden aspect-[16/9] w-full bg-slate-950">
-                  <img src={p.img} alt={p.title} loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                  <img src={p.img} alt={p.imgAlt ?? p.title} loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 </button>
                 <div className={`absolute -top-32 -right-32 h-64 w-64 rounded-full bg-gradient-to-br ${p.accent} opacity-20 blur-3xl group-hover:opacity-40 transition pointer-events-none`} />
                 <div className="relative p-7">
@@ -561,7 +620,7 @@ export default function Index() {
                 >
                   <img
                     src={a.src}
-                    alt={a.caption}
+                    alt={a.alt}
                     loading="lazy"
                     className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
                   />
