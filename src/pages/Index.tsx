@@ -78,7 +78,8 @@ const experience = [
     role: "Cybersecurity & Software Engineering Intern",
     period: "Jul 2025 — Sept 2025",
     tag: "Cybersecurity",
-    img: usiuVarsity.url, // varsity jacket with "P" — campus/internship era
+    img: usiuVarsity.url,
+    imgAlt: "Charles Omondi in a university varsity jacket during his cybersecurity and software engineering internship at Coseke Limited.",
     points: [
       "Participated in vulnerability assessments and penetration testing exercises",
       "Supported development and maintenance of secure software solutions",
