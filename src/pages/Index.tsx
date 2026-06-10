@@ -488,7 +488,7 @@ export default function Index() {
                   onClick={() => setLightbox({ src: e.img, caption: `${e.role} — ${e.company}` })}
                   className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 aspect-[4/3] w-full group"
                 >
-                  <img src={e.img} alt={e.company} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                  <img src={e.img} alt={e.imgAlt ?? `${e.role} at ${e.company}`} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 </button>
                 <div className="ml-12 md:ml-0 rounded-2xl border border-cyan-400/10 bg-slate-900/60 backdrop-blur-xl p-6">
                   <div className="flex items-center justify-between flex-wrap gap-2">
