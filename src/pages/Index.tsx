@@ -307,8 +307,8 @@ export default function Index() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative mx-auto w-full max-w-md">
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-cyan-500/40 via-blue-400/20 to-fuchsia-500/30 blur-2xl" />
             <div className="relative rounded-[2rem] border border-cyan-400/20 bg-slate-900/40 backdrop-blur-xl p-3 shadow-2xl">
-              <button onClick={() => setLightbox({ src: HERO_IMG, caption: "Omollo Charles Omondi" })} className="block w-full overflow-hidden rounded-[1.5rem] aspect-[4/5] group">
-                <img src={HERO_IMG} alt="Omollo Charles Omondi" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <button onClick={() => setLightbox({ src: HERO_IMG, caption: "Omollo Charles Omondi" })} className="block w-full overflow-hidden rounded-[1.5rem] aspect-[4/5] group bg-slate-950">
+                <img src={HERO_IMG} alt="Omollo Charles Omondi" loading="eager" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
               </button>
               <div className="absolute top-6 left-6 rounded-full bg-slate-950/80 backdrop-blur px-3 py-1 text-[10px] font-mono text-emerald-300 border border-emerald-400/30">● LIVE</div>
               <div className="absolute bottom-6 right-6 rounded-xl bg-slate-950/80 backdrop-blur px-3 py-2 text-[10px] font-mono text-cyan-200 border border-cyan-400/20">
@@ -323,8 +323,8 @@ export default function Index() {
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-10 items-start">
             <div className="grid grid-cols-3 gap-3">
               {ABOUT_IMGS.map((src, i) => (
-                <button key={src} onClick={() => setLightbox({ src })} className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-900/40 ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"}`}>
-                  <img src={src} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <button key={src} onClick={() => setLightbox({ src })} className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"}`}>
+                  <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition" />
                 </button>
               ))}
@@ -427,9 +427,9 @@ export default function Index() {
                 <span className="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.8)] ring-4 ring-[#05070d]" />
                 <button
                   onClick={() => setLightbox({ src: e.img, caption: `${e.role} — ${e.company}` })}
-                  className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-900/40 aspect-[4/3] w-full group"
+                  className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 aspect-[4/3] w-full group"
                 >
-                  <img src={e.img} alt={e.company} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={e.img} alt={e.company} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 </button>
                 <div className="ml-12 md:ml-0 rounded-2xl border border-cyan-400/10 bg-slate-900/60 backdrop-blur-xl p-6">
                   <div className="flex items-center justify-between flex-wrap gap-2">
@@ -468,8 +468,8 @@ export default function Index() {
                   i === 0 ? "lg:col-span-2" : ""
                 }`}
               >
-                <button onClick={() => setLightbox({ src: p.img, caption: p.title })} className="block overflow-hidden aspect-[16/9] w-full">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <button onClick={() => setLightbox({ src: p.img, caption: p.title })} className="block overflow-hidden aspect-[16/9] w-full bg-slate-950">
+                  <img src={p.img} alt={p.title} loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 </button>
                 <div className={`absolute -top-32 -right-32 h-64 w-64 rounded-full bg-gradient-to-br ${p.accent} opacity-20 blur-3xl group-hover:opacity-40 transition pointer-events-none`} />
                 <div className="relative p-7">
@@ -546,22 +546,25 @@ export default function Index() {
               </button>
             ))}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-3 [column-fill:_balance]">
             <AnimatePresence mode="popLayout">
-              {filtered.map((a, i) => (
+              {filtered.map((a) => (
                 <motion.button
                   key={a.src}
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setLightbox(a)}
-                  className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-900/40 ${
-                    i % 5 === 0 ? "row-span-2 aspect-[3/4]" : "aspect-square"
-                  }`}
+                  className="group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950"
                 >
-                  <img src={a.src} alt={a.caption} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img
+                    src={a.src}
+                    alt={a.caption}
+                    loading="lazy"
+                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-4">
                     <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-300">{a.cat}</span>
                     <span className="text-xs text-cyan-100 font-medium mt-0.5">{a.caption}</span>
@@ -570,6 +573,7 @@ export default function Index() {
               ))}
             </AnimatePresence>
           </div>
+
         </Section>
 
         {/* CONTACT */}
