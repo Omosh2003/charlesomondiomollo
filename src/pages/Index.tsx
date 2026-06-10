@@ -168,7 +168,8 @@ const projects = [
       "Conducted automated and manual security testing of the USIU counselling portal. Identified vulnerabilities across the web surface and delivered prioritized remediation recommendations.",
     stack: ["Nmap", "Burp Suite", "Wireshark", "Manual Testing", "Reporting"],
     accent: "from-fuchsia-400 to-cyan-400",
-    img: usiuVarsity.url, // USIU-related engagement
+    img: usiuVarsity.url,
+    imgAlt: "Charles Omondi on the USIU campus during the counselling portal vulnerability assessment engagement.",
   },
   {
     title: "Personal Portfolio Website",
