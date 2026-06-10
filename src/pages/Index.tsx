@@ -427,9 +427,9 @@ export default function Index() {
                 <span className="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.8)] ring-4 ring-[#05070d]" />
                 <button
                   onClick={() => setLightbox({ src: e.img, caption: `${e.role} — ${e.company}` })}
-                  className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-900/40 aspect-[4/3] w-full group"
+                  className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 aspect-[4/3] w-full group"
                 >
-                  <img src={e.img} alt={e.company} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={e.img} alt={e.company} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 </button>
                 <div className="ml-12 md:ml-0 rounded-2xl border border-cyan-400/10 bg-slate-900/60 backdrop-blur-xl p-6">
                   <div className="flex items-center justify-between flex-wrap gap-2">
