@@ -27,7 +27,11 @@ const CONTACT = {
 
 // Image → content mapping (analyzed from photos + matched to CV sections)
 const HERO_IMG = portraitShirt.url;                 // formal shirt+tie headshot → hero
-const ABOUT_IMGS = [varsityBlack.url, argentinaJersey.url, stepsCap.url];
+const ABOUT_IMGS: { src: string; alt: string }[] = [
+  { src: varsityBlack.url, alt: "Charles Omondi in a black varsity jacket with a staff lanyard — earlier ICT support era." },
+  { src: argentinaJersey.url, alt: "Charles Omondi off-duty in an Argentina football jersey at a community event." },
+  { src: stepsCap.url, alt: "Casual portrait of Charles Omondi on a staircase, between professional engagements." },
+];
 
 const skillGroups = [
   {
