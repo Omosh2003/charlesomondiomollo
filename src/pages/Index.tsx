@@ -179,6 +179,7 @@ const projects = [
     stack: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     accent: "from-emerald-400 to-sky-400",
     img: portraitShirt.url,
+    imgAlt: "Studio portrait of Charles Omondi representing the personal portfolio website project.",
   },
 ];
 
