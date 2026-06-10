@@ -158,7 +158,8 @@ const projects = [
       "AI-powered cybersecurity platform for threat detection and anomaly monitoring. Focused on phishing prevention and securing digital infrastructure for educational institutions and the public sector.",
     stack: ["Python", "AI/ML", "Threat Detection", "Phishing Prevention", "Anomaly Monitoring"],
     accent: "from-cyan-400 to-emerald-400",
-    img: techWeekRolls.url, // Technology & Innovation Week — premier project showcase
+    img: techWeekRolls.url,
+    imgAlt: "Charles Omondi showcasing the SalamaNet AI cybersecurity platform at Technology & Innovation Week.",
   },
   {
     title: "USIU Counselling Portal — Vulnerability Assessment",
