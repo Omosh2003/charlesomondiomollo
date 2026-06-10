@@ -93,7 +93,8 @@ const experience = [
     role: "IT & Sales Support",
     period: "Feb 2024 — May 2024",
     tag: "IT Support",
-    img: mpesaOffice.url, // M-Pesa branded shirt in office — Safaricom era
+    img: mpesaOffice.url,
+    imgAlt: "Charles Omondi wearing a green Safaricom M-Pesa branded shirt at a Safaricom retail office during his IT & Sales Support role.",
     points: [
       "Frontline IT support for mobile, network, and device-related issues",
       "Assisted clients in selecting suitable telecommunications products",
