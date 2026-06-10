@@ -620,7 +620,7 @@ export default function Index() {
                 >
                   <img
                     src={a.src}
-                    alt={a.caption}
+                    alt={a.alt}
                     loading="lazy"
                     className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
                   />
