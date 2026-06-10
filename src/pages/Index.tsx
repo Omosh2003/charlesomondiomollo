@@ -188,16 +188,62 @@ const achievements = [
 ];
 
 const gallery = [
-  { src: portraitShirt.url,  cat: "Professional", caption: "Professional headshot" },
-  { src: mpesaOffice.url,    cat: "Work Experience", caption: "Safaricom · M-Pesa operations" },
-  { src: safaricomShop.url,  cat: "Work Experience", caption: "Field IT & sales support" },
-  { src: usiuVarsity.url,    cat: "Cybersecurity Activities", caption: "USIU engagement period" },
-  { src: varsityBlack.url,   cat: "Leadership & Teamwork", caption: "ICT support era" },
-  { src: interviewMic.url,   cat: "Events & Training", caption: "Brand ambassador outreach" },
-  { src: techWeekRolls.url,  cat: "Events & Training", caption: "Technology & Innovation Week" },
-  { src: stepsCap.url,       cat: "Professional", caption: "Between sessions" },
-  { src: argentinaJersey.url, cat: "Leadership & Teamwork", caption: "Off-duty" },
+  {
+    src: portraitShirt.url,
+    cat: "Hero & Personal Branding",
+    caption: "Professional headshot — Omollo Charles Omondi, Cybersecurity Specialist",
+    alt: "Studio portrait of Omollo Charles Omondi in a formal shirt and tie, used as the portfolio hero image.",
+  },
+  {
+    src: mpesaOffice.url,
+    cat: "Safaricom PLC",
+    caption: "Safaricom PLC · IT & Sales Support, M-Pesa operations (2024)",
+    alt: "Charles Omondi in a green Safaricom M-Pesa branded shirt inside a Safaricom retail office during his IT & Sales Support role.",
+  },
+  {
+    src: safaricomShop.url,
+    cat: "Optiven Limited",
+    caption: "Optiven Limited · Data Management & Leads Administrator (2025–present)",
+    alt: "Charles Omondi in business-casual attire on a client-facing assignment during his Data Management and Leads Administrator role at Optiven Limited.",
+  },
+  {
+    src: usiuVarsity.url,
+    cat: "Projects · USIU Assessment",
+    caption: "USIU Counselling Portal vulnerability assessment engagement",
+    alt: "Charles Omondi in a university varsity jacket on the USIU campus during the counselling portal vulnerability assessment project.",
+  },
+  {
+    src: varsityBlack.url,
+    cat: "Jamabinju Food & Catering",
+    caption: "Jamabinju Food & Catering · ICT & Technical Support era",
+    alt: "Charles Omondi in a black varsity jacket with a staff lanyard, from his earlier ICT and technical support role at Jamabinju Food & Catering.",
+  },
+  {
+    src: interviewMic.url,
+    cat: "Stan Consulting Group",
+    caption: "Stan Consulting Group · Sales & Brand Ambassador outreach",
+    alt: "Charles Omondi speaking into a microphone during a client outreach event as a Sales and Brand Ambassador for Stan Consulting Group.",
+  },
+  {
+    src: techWeekRolls.url,
+    cat: "Projects · SalamaNet AI",
+    caption: "Technology & Innovation Week — SalamaNet AI showcase",
+    alt: "Charles Omondi presenting the SalamaNet AI cybersecurity platform at Technology & Innovation Week.",
+  },
+  {
+    src: stepsCap.url,
+    cat: "Jubilee Insurance",
+    caption: "Jubilee Insurance · Financial Engineer Agent era",
+    alt: "Casual portrait of Charles Omondi wearing a cap on a staircase, from his early-career period as a Financial Engineer Agent at Jubilee Insurance.",
+  },
+  {
+    src: argentinaJersey.url,
+    cat: "Events, Leadership & Activities",
+    caption: "Off-duty — team & community engagement",
+    alt: "Charles Omondi off-duty wearing an Argentina football jersey at a community / team event.",
+  },
 ];
+
 
 export default function Index() {
   const [lightbox, setLightbox] = useState<{ src: string; caption?: string } | null>(null);
