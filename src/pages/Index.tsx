@@ -546,22 +546,25 @@ export default function Index() {
               </button>
             ))}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-3 [column-fill:_balance]">
             <AnimatePresence mode="popLayout">
-              {filtered.map((a, i) => (
+              {filtered.map((a) => (
                 <motion.button
                   key={a.src}
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setLightbox(a)}
-                  className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-900/40 ${
-                    i % 5 === 0 ? "row-span-2 aspect-[3/4]" : "aspect-square"
-                  }`}
+                  className="group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950"
                 >
-                  <img src={a.src} alt={a.caption} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img
+                    src={a.src}
+                    alt={a.caption}
+                    loading="lazy"
+                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-4">
                     <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-300">{a.cat}</span>
                     <span className="text-xs text-cyan-100 font-medium mt-0.5">{a.caption}</span>
@@ -570,6 +573,7 @@ export default function Index() {
               ))}
             </AnimatePresence>
           </div>
+
         </Section>
 
         {/* CONTACT */}
