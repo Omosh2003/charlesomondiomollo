@@ -323,8 +323,8 @@ export default function Index() {
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-10 items-start">
             <div className="grid grid-cols-3 gap-3">
               {ABOUT_IMGS.map((src, i) => (
-                <button key={src} onClick={() => setLightbox({ src })} className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-900/40 ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"}`}>
-                  <img src={src} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <button key={src} onClick={() => setLightbox({ src })} className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"}`}>
+                  <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition" />
                 </button>
               ))}
