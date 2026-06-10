@@ -108,7 +108,8 @@ const experience = [
     role: "ICT & Technical Support",
     period: "Prior",
     tag: "ICT",
-    img: varsityBlack.url, // earlier era — black varsity with lanyard/ID
+    img: varsityBlack.url,
+    imgAlt: "Charles Omondi in a black varsity jacket with a staff lanyard from his ICT and technical support role at Jamabinju Food & Catering.",
     points: [
       "Managed ICT infrastructure including computers and network systems",
       "Diagnosed and resolved hardware and software issues",
