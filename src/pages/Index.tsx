@@ -63,7 +63,8 @@ const experience = [
     role: "Data Management & Leads Administrator",
     period: "Aug 2025 — Present",
     tag: "Current",
-    img: safaricomShop.url, // professional standing shot, business-casual era
+    img: safaricomShop.url,
+    imgAlt: "Charles Omondi in business-casual attire during his Data Management and Leads Administrator role at Optiven Limited.",
     points: [
       "Managing and organizing large volumes of client data within CRM systems for accuracy and accessibility",
       "Tracking and following up on sales leads to support higher conversion rates",
