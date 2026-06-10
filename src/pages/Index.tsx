@@ -123,7 +123,8 @@ const experience = [
     role: "Sales & Brand Ambassador",
     period: "Prior",
     tag: "Sales",
-    img: interviewMic.url, // public-facing, microphone — outreach/brand work
+    img: interviewMic.url,
+    imgAlt: "Charles Omondi speaking into a microphone during a brand outreach event as a Sales & Brand Ambassador for Stan Consulting Group.",
     points: [
       "Represented the brand by promoting services to potential clients",
       "Engaged customers through direct marketing and product presentations",
