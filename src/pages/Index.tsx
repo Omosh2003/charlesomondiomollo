@@ -138,7 +138,8 @@ const experience = [
     role: "Financial Engineer Agent",
     period: "Prior",
     tag: "Finance",
-    img: stepsCap.url, // casual, between-meetings shot — early career
+    img: stepsCap.url,
+    imgAlt: "Casual portrait of Charles Omondi on a staircase from his early-career period as a Financial Engineer Agent at Jubilee Insurance.",
     points: [
       "Advised clients on financial and insurance products tailored to their needs",
       "Promoted insurance solutions to individuals and organizations",
