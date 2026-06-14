@@ -277,17 +277,21 @@ export default function Index() {
       {/* Background grid + glow */}
       <div aria-hidden className="fixed inset-0 pointer-events-none">
         <div
-          className="absolute inset-0 opacity-[0.18]"
+          className="absolute inset-0 opacity-[0.22]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(34,211,238,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.18) 1px, transparent 1px)",
+              "linear-gradient(rgba(167,139,250,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.22) 1px, transparent 1px)",
             backgroundSize: "56px 56px",
             maskImage: "radial-gradient(ellipse at top, black 30%, transparent 75%)",
           }}
         />
-        <div className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-cyan-500/20 blur-[140px]" />
-        <div className="absolute top-1/3 -right-40 h-[520px] w-[520px] rounded-full bg-blue-500/15 blur-[140px]" />
-        <div className="absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-fuchsia-500/10 blur-[140px]" />
+        {/* Vibrant aurora orbs */}
+        <div className="absolute -top-40 -left-40 h-[560px] w-[560px] rounded-full bg-cyan-500/30 blur-[140px] animate-pulse" style={{ animationDuration: "8s" }} />
+        <div className="absolute top-1/4 -right-40 h-[560px] w-[560px] rounded-full bg-fuchsia-500/30 blur-[140px] animate-pulse" style={{ animationDuration: "10s" }} />
+        <div className="absolute top-1/2 left-1/4 h-[460px] w-[460px] rounded-full bg-violet-500/25 blur-[140px] animate-pulse" style={{ animationDuration: "12s" }} />
+        <div className="absolute bottom-1/3 right-1/4 h-[420px] w-[420px] rounded-full bg-emerald-500/25 blur-[140px] animate-pulse" style={{ animationDuration: "14s" }} />
+        <div className="absolute bottom-0 left-1/3 h-[460px] w-[460px] rounded-full bg-amber-500/20 blur-[140px] animate-pulse" style={{ animationDuration: "11s" }} />
+        <div className="absolute -bottom-20 right-0 h-[400px] w-[400px] rounded-full bg-rose-500/20 blur-[140px] animate-pulse" style={{ animationDuration: "13s" }} />
       </div>
 
       {/* Nav */}
@@ -329,7 +333,7 @@ export default function Index() {
             </div>
             <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight">
               Omollo Charles<br />
-              <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-fuchsia-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-300 via-fuchsia-300 to-amber-300 bg-clip-text text-transparent">
                 Omondi.
               </span>
             </h1>
@@ -473,7 +477,7 @@ export default function Index() {
 
         {/* EXPERIENCE */}
         <Section id="experience" eyebrow="04 / experience" title="From the shop floor to the SOC.">
-          <ol className="relative space-y-10 before:absolute before:left-4 md:before:left-1/2 before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-cyan-400/60 before:via-blue-400/30 before:to-transparent">
+          <ol className="relative space-y-10 before:absolute before:left-4 md:before:left-1/2 before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-cyan-400/80 before:via-fuchsia-400/60 before:via-violet-400/50 before:to-amber-400/40">
             {experience.map((e, i) => (
               <motion.li
                 key={e.company + e.period}
@@ -483,7 +487,7 @@ export default function Index() {
                 transition={{ duration: 0.6 }}
                 className={`relative md:grid md:grid-cols-2 md:gap-12 md:items-center ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}
               >
-                <span className="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.8)] ring-4 ring-[#05070d]" />
+                {(() => { const dots = [["bg-cyan-400","rgba(34,211,238,0.8)"],["bg-fuchsia-400","rgba(232,121,249,0.8)"],["bg-emerald-400","rgba(52,211,153,0.8)"],["bg-amber-400","rgba(251,191,36,0.8)"],["bg-violet-400","rgba(167,139,250,0.8)"],["bg-rose-400","rgba(251,113,133,0.8)"]]; const [c, g] = dots[i % dots.length]; return <span className={`absolute left-4 md:left-1/2 top-6 -translate-x-1/2 h-4 w-4 rounded-full ${c} ring-4 ring-[#05070d]`} style={{ boxShadow: `0 0 20px ${g}` }} />; })()}
                 <button
                   onClick={() => setLightbox({ src: e.img, caption: `${e.role} — ${e.company}` })}
                   className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 aspect-[4/3] w-full group"
