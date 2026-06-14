@@ -333,7 +333,7 @@ export default function Index() {
             </div>
             <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight">
               Omollo Charles<br />
-              <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-fuchsia-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-300 via-fuchsia-300 to-amber-300 bg-clip-text text-transparent">
                 Omondi.
               </span>
             </h1>
