@@ -277,17 +277,21 @@ export default function Index() {
       {/* Background grid + glow */}
       <div aria-hidden className="fixed inset-0 pointer-events-none">
         <div
-          className="absolute inset-0 opacity-[0.18]"
+          className="absolute inset-0 opacity-[0.22]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(34,211,238,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.18) 1px, transparent 1px)",
+              "linear-gradient(rgba(167,139,250,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.22) 1px, transparent 1px)",
             backgroundSize: "56px 56px",
             maskImage: "radial-gradient(ellipse at top, black 30%, transparent 75%)",
           }}
         />
-        <div className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-cyan-500/20 blur-[140px]" />
-        <div className="absolute top-1/3 -right-40 h-[520px] w-[520px] rounded-full bg-blue-500/15 blur-[140px]" />
-        <div className="absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-fuchsia-500/10 blur-[140px]" />
+        {/* Vibrant aurora orbs */}
+        <div className="absolute -top-40 -left-40 h-[560px] w-[560px] rounded-full bg-cyan-500/30 blur-[140px] animate-pulse" style={{ animationDuration: "8s" }} />
+        <div className="absolute top-1/4 -right-40 h-[560px] w-[560px] rounded-full bg-fuchsia-500/30 blur-[140px] animate-pulse" style={{ animationDuration: "10s" }} />
+        <div className="absolute top-1/2 left-1/4 h-[460px] w-[460px] rounded-full bg-violet-500/25 blur-[140px] animate-pulse" style={{ animationDuration: "12s" }} />
+        <div className="absolute bottom-1/3 right-1/4 h-[420px] w-[420px] rounded-full bg-emerald-500/25 blur-[140px] animate-pulse" style={{ animationDuration: "14s" }} />
+        <div className="absolute bottom-0 left-1/3 h-[460px] w-[460px] rounded-full bg-amber-500/20 blur-[140px] animate-pulse" style={{ animationDuration: "11s" }} />
+        <div className="absolute -bottom-20 right-0 h-[400px] w-[400px] rounded-full bg-rose-500/20 blur-[140px] animate-pulse" style={{ animationDuration: "13s" }} />
       </div>
 
       {/* Nav */}
