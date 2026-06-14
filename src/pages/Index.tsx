@@ -487,7 +487,7 @@ export default function Index() {
                 transition={{ duration: 0.6 }}
                 className={`relative md:grid md:grid-cols-2 md:gap-12 md:items-center ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}
               >
-                <span className="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.8)] ring-4 ring-[#05070d]" />
+                {(() => { const dots = [["bg-cyan-400","rgba(34,211,238,0.8)"],["bg-fuchsia-400","rgba(232,121,249,0.8)"],["bg-emerald-400","rgba(52,211,153,0.8)"],["bg-amber-400","rgba(251,191,36,0.8)"],["bg-violet-400","rgba(167,139,250,0.8)"],["bg-rose-400","rgba(251,113,133,0.8)"]]; const [c, g] = dots[i % dots.length]; return <span className={`absolute left-4 md:left-1/2 top-6 -translate-x-1/2 h-4 w-4 rounded-full ${c} ring-4 ring-[#05070d]`} style={{ boxShadow: `0 0 20px ${g}` }} />; })()}
                 <button
                   onClick={() => setLightbox({ src: e.img, caption: `${e.role} — ${e.company}` })}
                   className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 aspect-[4/3] w-full group"
