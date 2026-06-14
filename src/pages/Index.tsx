@@ -477,7 +477,7 @@ export default function Index() {
 
         {/* EXPERIENCE */}
         <Section id="experience" eyebrow="04 / experience" title="From the shop floor to the SOC.">
-          <ol className="relative space-y-10 before:absolute before:left-4 md:before:left-1/2 before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-cyan-400/60 before:via-blue-400/30 before:to-transparent">
+          <ol className="relative space-y-10 before:absolute before:left-4 md:before:left-1/2 before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-cyan-400/80 before:via-fuchsia-400/60 before:via-violet-400/50 before:to-amber-400/40">
             {experience.map((e, i) => (
               <motion.li
                 key={e.company + e.period}
