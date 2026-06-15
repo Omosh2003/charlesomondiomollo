@@ -1,0 +1,9 @@
+# Charles Omollo Omondi
+
+> Portfolio of Charles Omollo Omondi — Cybersecurity Engineer, AI Security Innovator, Software Engineer, and IT Support specialist based in Nairobi, Kenya.
+
+Charles Omollo Omondi is a cybersecurity specialist and software engineer with hands-on experience across IT support, data management, sales & CRM, ethical hacking, and AI security research. The site showcases his education, professional experience, projects (including SalamaNet AI), certifications (Cisco Ethical Hacking, IVE Abroad Students), achievements, and a contact section.
+
+## Pages
+
+- [Portfolio home](/): Hero, about, skills, experience timeline, projects, certifications, achievements gallery, and contact.
