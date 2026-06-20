@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Shield, Code2, Headphones, Database, TrendingUp, Mail, Github, Phone,
@@ -308,7 +309,7 @@ export default function Index() {
             <span className="text-emerald-300">sec</span>
           </a>
           <ul className="hidden md:flex items-center gap-7 text-sm text-slate-400">
-            {["about", "skills", "experience", "projects", "certifications", "gallery", "contact"].map((s) => (
+            {["about", "skills", "experience", "projects", "certifications", "writing", "gallery", "contact"].map((s) => (
               <li key={s}>
                 <a href={`#${s}`} className="hover:text-cyan-300 transition-colors capitalize">{s}</a>
               </li>
@@ -571,6 +572,26 @@ export default function Index() {
               </div>
             ))}
           </div>
+        </Section>
+
+        {/* WRITING */}
+        <Section id="writing" eyebrow="06.5 / writing" title="From the blog.">
+          <Link
+            to="/blog/phishing-guide"
+            className="group block rounded-2xl border border-cyan-400/10 bg-slate-900/50 backdrop-blur-xl p-6 hover:border-fuchsia-400/40 transition"
+          >
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-cyan-300 mb-3">
+              <Shield className="h-4 w-4" />
+              <span>Cybersecurity guide</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-semibold text-slate-100 group-hover:text-fuchsia-200 transition">
+              How to Spot a Phishing Email: A 2026 Cybersecurity Guide
+            </h3>
+            <p className="mt-2 text-sm text-slate-400 leading-relaxed">
+              Red flags, real-world examples (including M-Pesa scams and Business Email Compromise), and the exact
+              steps to take when you suspect a phishing message. 9 min read →
+            </p>
+          </Link>
         </Section>
 
         {/* ACHIEVEMENTS */}
