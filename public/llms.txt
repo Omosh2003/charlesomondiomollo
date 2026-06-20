@@ -7,3 +7,4 @@ Charles Omollo Omondi is a cybersecurity specialist and software engineer with h
 ## Pages
 
 - [Portfolio home](/): Hero, about, skills, experience timeline, projects, certifications, achievements gallery, and contact.
+- [How to Spot a Phishing Email (2026 guide)](/blog/phishing-guide): Practical guide on identifying phishing emails — red flags, real-world examples (including M-Pesa scams and BEC), and step-by-step response actions.
