@@ -316,13 +316,22 @@ export default function Index() {
               </li>
             ))}
           </ul>
-          <a
-            href={resume.url}
-            download
-            className="hidden sm:inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-1.5 text-xs font-medium text-cyan-200 hover:bg-cyan-400/20 transition"
-          >
-            <Download className="h-3.5 w-3.5" /> CV
-          </a>
+          <div className="hidden sm:flex items-center gap-2">
+            <a
+              href={resume.url}
+              download
+              className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-1.5 text-xs font-medium text-cyan-200 hover:bg-cyan-400/20 transition"
+            >
+              <Download className="h-3.5 w-3.5" /> Resume
+            </a>
+            <a
+              href={cv.url}
+              download
+              className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/40 bg-fuchsia-400/10 px-4 py-1.5 text-xs font-medium text-fuchsia-200 hover:bg-fuchsia-400/20 transition"
+            >
+              <Download className="h-3.5 w-3.5" /> CV
+            </a>
+          </div>
         </nav>
       </header>
 
