@@ -268,6 +268,48 @@ export default function Index() {
   const [scrolled, setScrolled] = useState(false);
   const [filter, setFilter] = useState<string>("All");
 
+  // Contact form state
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+
+  const handleField = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormError(null);
+
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name) return setFormError("Please enter your name.");
+    if (!emailRe.test(email)) return setFormError("Please enter a valid email.");
+    if (!message) return setFormError("Please enter a message.");
+
+    setSending(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: { name, email, subject: form.subject.trim(), message, website: form.website },
+      });
+      if (error) throw error;
+      if ((data as any)?.error) throw new Error((data as any).error);
+      setSent(true);
+      setForm({ name: "", email: "", subject: "", message: "", website: "" });
+      toast.success("Message sent — I'll get back to you soon.");
+      setTimeout(() => setSent(false), 6000);
+    } catch (err: any) {
+      const msg = err?.message || "Something went wrong. Please try again.";
+      setFormError(msg);
+      toast.error(msg);
+    } finally {
+      setSending(false);
+    }
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
