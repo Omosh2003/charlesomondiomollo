@@ -362,6 +362,13 @@ export default function Index() {
                 download="Omollo_Charles_Omondi_Resume.pdf"
                 className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)] hover:shadow-[0_0_40px_-2px_rgba(34,211,238,0.8)] transition-all hover:scale-105"
               >
+                <Download className="h-4 w-4" /> Download Resume
+              </a>
+              <a
+                href={cv.url}
+                download="Charles_Omondi_CV.pdf"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-fuchsia-400 to-pink-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_30px_-5px_rgba(232,121,249,0.6)] hover:shadow-[0_0_40px_-2px_rgba(232,121,249,0.8)] transition-all hover:scale-105"
+              >
                 <Download className="h-4 w-4" /> Download CV
               </a>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 backdrop-blur px-6 py-3 text-sm font-medium text-slate-200 hover:border-cyan-400/50 hover:text-cyan-200 transition">
