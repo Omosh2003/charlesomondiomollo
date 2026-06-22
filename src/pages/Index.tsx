@@ -5,7 +5,10 @@ import {
   Shield, Code2, Headphones, Database, TrendingUp, Mail, Github, Phone,
   Linkedin, MapPin, ExternalLink, Award, Briefcase, GraduationCap,
   X, ChevronRight, Sparkles, Lock, Cpu, Terminal, Download, Brain, Globe,
+  Loader2, CheckCircle2, AlertCircle,
 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 import portraitShirt from "@/assets/profile/portrait-shirt.asset.json";
 import varsityBlack from "@/assets/profile/varsity-black.asset.json";
