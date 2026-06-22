@@ -17,6 +17,7 @@ import argentinaJersey from "@/assets/profile/argentina-jersey.asset.json";
 import usiuVarsity from "@/assets/profile/usiu-varsity.asset.json";
 import techWeekRolls from "@/assets/profile/tech-week-rolls.asset.json";
 import resume from "@/assets/profile/resume.asset.json";
+import cv from "@/assets/profile/cv.asset.json";
 
 const CONTACT = {
   email: "charlesomondi2003@gmail.com",
