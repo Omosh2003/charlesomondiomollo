@@ -744,15 +744,69 @@ export default function Index() {
                   <ContactRow icon={MapPin} label="location" value={CONTACT.location} />
                 </ul>
               </div>
-              <form
-                onSubmit={(e) => { e.preventDefault(); window.location.href = `mailto:${CONTACT.email}`; }}
-                className="space-y-3 font-mono text-sm"
-              >
-                <input type="text" placeholder="> your name" className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition" />
-                <input type="email" placeholder="> your email" className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition" />
-                <textarea rows={5} placeholder="> your message" className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition resize-none" />
-                <button className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)] transition">
-                  Transmit message →
+              <form onSubmit={handleContactSubmit} className="space-y-3 font-mono text-sm" noValidate>
+                {/* Honeypot - hidden from real users */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={handleField("website")}
+                  className="hidden"
+                  aria-hidden="true"
+                />
+                <input
+                  type="text"
+                  required
+                  maxLength={200}
+                  value={form.name}
+                  onChange={handleField("name")}
+                  placeholder="> your name"
+                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition"
+                />
+                <input
+                  type="email"
+                  required
+                  maxLength={320}
+                  value={form.email}
+                  onChange={handleField("email")}
+                  placeholder="> your email"
+                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition"
+                />
+                <input
+                  type="text"
+                  maxLength={300}
+                  value={form.subject}
+                  onChange={handleField("subject")}
+                  placeholder="> subject (optional)"
+                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition"
+                />
+                <textarea
+                  required
+                  rows={5}
+                  maxLength={5000}
+                  value={form.message}
+                  onChange={handleField("message")}
+                  placeholder="> your message"
+                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition resize-none"
+                />
+                {formError && (
+                  <p role="alert" className="flex items-center gap-2 text-xs text-rose-300">
+                    <AlertCircle className="h-3.5 w-3.5" /> {formError}
+                  </p>
+                )}
+                {sent && !formError && (
+                  <p className="flex items-center gap-2 text-xs text-emerald-300">
+                    <CheckCircle2 className="h-3.5 w-3.5" /> Message transmitted. I'll reply from charlesomondi2003@gmail.com.
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)] transition disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {sending ? (<><Loader2 className="h-4 w-4 animate-spin" /> Transmitting…</>) : <>Transmit message →</>}
                 </button>
               </form>
             </div>
