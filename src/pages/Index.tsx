@@ -832,7 +832,7 @@ export default function Index() {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)] transition disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:ring-cyan-300 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {sending ? (<><Loader2 className="h-4 w-4 animate-spin" /> Transmitting…</>) : <>Transmit message →</>}
                 </button>
