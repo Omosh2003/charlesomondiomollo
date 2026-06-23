@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Shield, Code2, Headphones, Database, TrendingUp, Mail, Github, Phone,
-  Linkedin, MapPin, ExternalLink, Award, Briefcase, GraduationCap,
+  Linkedin, Instagram, MapPin, ExternalLink, Award, Briefcase, GraduationCap,
   X, ChevronRight, Sparkles, Lock, Cpu, Terminal, Download, Brain, Globe,
   Loader2, CheckCircle2, AlertCircle,
 } from "lucide-react";
@@ -25,10 +25,27 @@ import cv from "@/assets/profile/cv.asset.json";
 const CONTACT = {
   email: "charlesomondi2003@gmail.com",
   phone: "+254 769 140 009",
+  whatsapp: "https://wa.me/254769140009",
   github: "https://github.com/Omosh2003",
-  portfolio: "https://charlesomondi.netlify.app",
-  location: "Nairobi, Kenya",
+  linkedin: "https://www.linkedin.com/in/omollocharles",
+  instagram: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=7foqlot",
+  location: "Nairobi | Karen | Juja | Nakuru",
 };
+
+// Inline WhatsApp glyph (lucide has no WhatsApp icon)
+function WhatsAppIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M19.11 4.91A10 10 0 0 0 3.5 17.36L2 22l4.77-1.47A10 10 0 1 0 19.11 4.9Zm-7.1 15.36a8.32 8.32 0 0 1-4.24-1.16l-.3-.18-2.83.87.9-2.76-.2-.32a8.34 8.34 0 1 1 6.67 3.55Zm4.57-6.24c-.25-.13-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06a6.83 6.83 0 0 1-2-1.24 7.55 7.55 0 0 1-1.39-1.73c-.14-.25 0-.38.11-.5.11-.11.25-.3.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48a.93.93 0 0 0-.67.31 2.83 2.83 0 0 0-.88 2.09c0 1.23.9 2.42 1.02 2.59.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.43.54.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.69-1.19.2-.59.2-1.09.14-1.2-.06-.11-.23-.17-.48-.3Z"/>
+    </svg>
+  );
+}
+
 
 // Image → content mapping (analyzed from photos + matched to CV sections)
 const HERO_IMG = portraitShirt.url;                 // formal shirt+tie headshot → hero
@@ -419,13 +436,15 @@ export default function Index() {
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 backdrop-blur px-6 py-3 text-sm font-medium text-slate-200 hover:border-cyan-400/50 hover:text-cyan-200 transition">
                 <Mail className="h-4 w-4" /> Get in touch
               </a>
-              <a href={`tel:${CONTACT.phone}`} className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 backdrop-blur px-6 py-3 text-sm font-medium text-slate-200 hover:border-cyan-400/50 hover:text-cyan-200 transition">
-                <Phone className="h-4 w-4" /> Call
+              <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" aria-label={`Chat on WhatsApp at ${CONTACT.phone}`} className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 backdrop-blur px-6 py-3 text-sm font-medium text-emerald-200 hover:border-emerald-400 hover:text-emerald-100 hover:bg-emerald-500/20 transition">
+                <WhatsAppIcon className="h-4 w-4" /> WhatsApp
               </a>
             </div>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4 text-xs font-mono text-slate-500">
               <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> {CONTACT.location}</span>
-              <span className="flex items-center gap-1.5"><Phone className="h-3.5 w-3.5" /> {CONTACT.phone}</span>
+              <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${CONTACT.phone}`} className="flex items-center gap-1.5 hover:text-emerald-300 transition"><WhatsAppIcon className="h-3.5 w-3.5" /> {CONTACT.phone}</a>
+              <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="flex items-center gap-1.5 hover:text-cyan-300 transition"><Linkedin className="h-3.5 w-3.5" /> LinkedIn</a>
+              <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram profile" className="flex items-center gap-1.5 hover:text-pink-300 transition"><Instagram className="h-3.5 w-3.5" /> Instagram</a>
               <span className="flex items-center gap-1.5"><Cpu className="h-3.5 w-3.5 text-emerald-400" /> Open to opportunities</span>
             </div>
           </motion.div>
@@ -737,11 +756,12 @@ export default function Index() {
                   and consulting opportunities.
                 </p>
                 <ul className="mt-6 space-y-3 font-mono text-sm">
-                  <ContactRow icon={Mail}  label="email"     value={CONTACT.email}    href={`mailto:${CONTACT.email}`} />
-                  <ContactRow icon={Phone} label="phone"     value={CONTACT.phone}    href={`tel:${CONTACT.phone.replace(/\s/g, "")}`} />
-                  <ContactRow icon={Github} label="github"   value="Omosh2003"        href={CONTACT.github} />
-                  <ContactRow icon={Globe} label="portfolio" value="charlesomondi.netlify.app" href={CONTACT.portfolio} />
-                  <ContactRow icon={MapPin} label="location" value={CONTACT.location} />
+                  <ContactRow icon={Mail}      label="email"     value={CONTACT.email}    href={`mailto:${CONTACT.email}`} />
+                  <ContactRow icon={WhatsAppIcon} label="whatsapp" value={CONTACT.phone}  href={CONTACT.whatsapp} ariaLabel={`Chat on WhatsApp at ${CONTACT.phone}`} />
+                  <ContactRow icon={Linkedin}  label="linkedin"  value="in/omollocharles"  href={CONTACT.linkedin} />
+                  <ContactRow icon={Instagram} label="instagram" value="@charlesomondi"   href={CONTACT.instagram} />
+                  <ContactRow icon={Github}    label="github"    value="Omosh2003"        href={CONTACT.github} />
+                  <ContactRow icon={MapPin}    label="location"  value={CONTACT.location} />
                 </ul>
               </div>
               <form onSubmit={handleContactSubmit} className="space-y-3 font-mono text-sm" noValidate>
@@ -885,20 +905,27 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-function ContactRow({ icon: Icon, label, value, href }: { icon: any; label: string; value: string; href?: string }) {
+function ContactRow({ icon: Icon, label, value, href, ariaLabel }: { icon: any; label: string; value: string; href?: string; ariaLabel?: string }) {
   const inner = (
     <>
-      <Icon className="h-4 w-4 text-cyan-300 flex-shrink-0" />
+      <Icon className="h-4 w-4 text-cyan-300 flex-shrink-0" aria-hidden="true" />
       <span className="text-slate-500 w-20">{label}</span>
       <span className="text-slate-200 break-all">{value}</span>
     </>
   );
+  const external = href?.startsWith("http");
   return (
     <li>
       {href ? (
-        <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="flex items-center gap-3 hover:text-cyan-200 transition group">
+        <a
+          href={href}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+          aria-label={ariaLabel ?? `${label}: ${value}`}
+          className="flex items-center gap-3 hover:text-cyan-200 transition group"
+        >
           {inner}
-          <ExternalLink className="h-3 w-3 text-slate-600 group-hover:text-cyan-300 ml-auto" />
+          <ExternalLink className="h-3 w-3 text-slate-600 group-hover:text-cyan-300 ml-auto" aria-hidden="true" />
         </a>
       ) : (
         <div className="flex items-center gap-3">{inner}</div>
