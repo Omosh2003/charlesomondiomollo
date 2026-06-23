@@ -783,7 +783,9 @@ export default function Index() {
                   value={form.name}
                   onChange={handleField("name")}
                   placeholder="> your name"
-                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition"
+                  aria-label="Your name"
+                  autoComplete="name"
+                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:border-cyan-400 transition"
                 />
                 <input
                   type="email"
@@ -792,7 +794,9 @@ export default function Index() {
                   value={form.email}
                   onChange={handleField("email")}
                   placeholder="> your email"
-                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition"
+                  aria-label="Your email address"
+                  autoComplete="email"
+                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:border-cyan-400 transition"
                 />
                 <input
                   type="text"
@@ -800,7 +804,8 @@ export default function Index() {
                   value={form.subject}
                   onChange={handleField("subject")}
                   placeholder="> subject (optional)"
-                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition"
+                  aria-label="Subject (optional)"
+                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:border-cyan-400 transition"
                 />
                 <textarea
                   required
@@ -809,18 +814,21 @@ export default function Index() {
                   value={form.message}
                   onChange={handleField("message")}
                   placeholder="> your message"
-                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition resize-none"
+                  aria-label="Your message"
+                  className="w-full bg-slate-950/60 border border-cyan-400/20 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:border-cyan-400 transition resize-none"
                 />
-                {formError && (
-                  <p role="alert" className="flex items-center gap-2 text-xs text-rose-300">
-                    <AlertCircle className="h-3.5 w-3.5" /> {formError}
-                  </p>
-                )}
-                {sent && !formError && (
-                  <p className="flex items-center gap-2 text-xs text-emerald-300">
-                    <CheckCircle2 className="h-3.5 w-3.5" /> Message transmitted. I'll reply from charlesomondi2003@gmail.com.
-                  </p>
-                )}
+                <div aria-live="polite" aria-atomic="true" className="min-h-[1rem]">
+                  {formError && (
+                    <p role="alert" className="flex items-center gap-2 text-xs text-rose-300">
+                      <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> {formError}
+                    </p>
+                  )}
+                  {sent && !formError && (
+                    <p className="flex items-center gap-2 text-xs text-emerald-300">
+                      <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" /> Message transmitted. I'll reply from charlesomondi2003@gmail.com.
+                    </p>
+                  )}
+                </div>
                 <button
                   type="submit"
                   disabled={sending}
