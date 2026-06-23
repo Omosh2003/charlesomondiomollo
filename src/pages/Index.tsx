@@ -754,11 +754,12 @@ export default function Index() {
                   and consulting opportunities.
                 </p>
                 <ul className="mt-6 space-y-3 font-mono text-sm">
-                  <ContactRow icon={Mail}  label="email"     value={CONTACT.email}    href={`mailto:${CONTACT.email}`} />
-                  <ContactRow icon={Phone} label="phone"     value={CONTACT.phone}    href={`tel:${CONTACT.phone.replace(/\s/g, "")}`} />
-                  <ContactRow icon={Github} label="github"   value="Omosh2003"        href={CONTACT.github} />
-                  <ContactRow icon={Globe} label="portfolio" value="charlesomondi.netlify.app" href={CONTACT.portfolio} />
-                  <ContactRow icon={MapPin} label="location" value={CONTACT.location} />
+                  <ContactRow icon={Mail}      label="email"     value={CONTACT.email}    href={`mailto:${CONTACT.email}`} />
+                  <ContactRow icon={WhatsAppIcon} label="whatsapp" value={CONTACT.phone}  href={CONTACT.whatsapp} ariaLabel={`Chat on WhatsApp at ${CONTACT.phone}`} />
+                  <ContactRow icon={Linkedin}  label="linkedin"  value="in/omollocharles"  href={CONTACT.linkedin} />
+                  <ContactRow icon={Instagram} label="instagram" value="@charlesomondi"   href={CONTACT.instagram} />
+                  <ContactRow icon={Github}    label="github"    value="Omosh2003"        href={CONTACT.github} />
+                  <ContactRow icon={MapPin}    label="location"  value={CONTACT.location} />
                 </ul>
               </div>
               <form onSubmit={handleContactSubmit} className="space-y-3 font-mono text-sm" noValidate>
