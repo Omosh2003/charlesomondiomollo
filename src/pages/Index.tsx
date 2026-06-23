@@ -905,20 +905,27 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-function ContactRow({ icon: Icon, label, value, href }: { icon: any; label: string; value: string; href?: string }) {
+function ContactRow({ icon: Icon, label, value, href, ariaLabel }: { icon: any; label: string; value: string; href?: string; ariaLabel?: string }) {
   const inner = (
     <>
-      <Icon className="h-4 w-4 text-cyan-300 flex-shrink-0" />
+      <Icon className="h-4 w-4 text-cyan-300 flex-shrink-0" aria-hidden="true" />
       <span className="text-slate-500 w-20">{label}</span>
       <span className="text-slate-200 break-all">{value}</span>
     </>
   );
+  const external = href?.startsWith("http");
   return (
     <li>
       {href ? (
-        <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="flex items-center gap-3 hover:text-cyan-200 transition group">
+        <a
+          href={href}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+          aria-label={ariaLabel ?? `${label}: ${value}`}
+          className="flex items-center gap-3 hover:text-cyan-200 transition group"
+        >
           {inner}
-          <ExternalLink className="h-3 w-3 text-slate-600 group-hover:text-cyan-300 ml-auto" />
+          <ExternalLink className="h-3 w-3 text-slate-600 group-hover:text-cyan-300 ml-auto" aria-hidden="true" />
         </a>
       ) : (
         <div className="flex items-center gap-3">{inner}</div>
