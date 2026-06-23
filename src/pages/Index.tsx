@@ -25,10 +25,27 @@ import cv from "@/assets/profile/cv.asset.json";
 const CONTACT = {
   email: "charlesomondi2003@gmail.com",
   phone: "+254 769 140 009",
+  whatsapp: "https://wa.me/254769140009",
   github: "https://github.com/Omosh2003",
-  portfolio: "https://charlesomondi.netlify.app",
-  location: "Nairobi, Kenya",
+  linkedin: "https://www.linkedin.com/in/omollocharles",
+  instagram: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=7foqlot",
+  location: "Nairobi | Karen | Juja | Nakuru",
 };
+
+// Inline WhatsApp glyph (lucide has no WhatsApp icon)
+function WhatsAppIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M19.11 4.91A10 10 0 0 0 3.5 17.36L2 22l4.77-1.47A10 10 0 1 0 19.11 4.9Zm-7.1 15.36a8.32 8.32 0 0 1-4.24-1.16l-.3-.18-2.83.87.9-2.76-.2-.32a8.34 8.34 0 1 1 6.67 3.55Zm4.57-6.24c-.25-.13-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06a6.83 6.83 0 0 1-2-1.24 7.55 7.55 0 0 1-1.39-1.73c-.14-.25 0-.38.11-.5.11-.11.25-.3.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48a.93.93 0 0 0-.67.31 2.83 2.83 0 0 0-.88 2.09c0 1.23.9 2.42 1.02 2.59.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.43.54.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.69-1.19.2-.59.2-1.09.14-1.2-.06-.11-.23-.17-.48-.3Z"/>
+    </svg>
+  );
+}
+
 
 // Image → content mapping (analyzed from photos + matched to CV sections)
 const HERO_IMG = portraitShirt.url;                 // formal shirt+tie headshot → hero
