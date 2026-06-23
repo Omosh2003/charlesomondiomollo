@@ -436,13 +436,15 @@ export default function Index() {
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 backdrop-blur px-6 py-3 text-sm font-medium text-slate-200 hover:border-cyan-400/50 hover:text-cyan-200 transition">
                 <Mail className="h-4 w-4" /> Get in touch
               </a>
-              <a href={`tel:${CONTACT.phone}`} className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 backdrop-blur px-6 py-3 text-sm font-medium text-slate-200 hover:border-cyan-400/50 hover:text-cyan-200 transition">
-                <Phone className="h-4 w-4" /> Call
+              <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" aria-label={`Chat on WhatsApp at ${CONTACT.phone}`} className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 backdrop-blur px-6 py-3 text-sm font-medium text-emerald-200 hover:border-emerald-400 hover:text-emerald-100 hover:bg-emerald-500/20 transition">
+                <WhatsAppIcon className="h-4 w-4" /> WhatsApp
               </a>
             </div>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4 text-xs font-mono text-slate-500">
               <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> {CONTACT.location}</span>
-              <span className="flex items-center gap-1.5"><Phone className="h-3.5 w-3.5" /> {CONTACT.phone}</span>
+              <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${CONTACT.phone}`} className="flex items-center gap-1.5 hover:text-emerald-300 transition"><WhatsAppIcon className="h-3.5 w-3.5" /> {CONTACT.phone}</a>
+              <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="flex items-center gap-1.5 hover:text-cyan-300 transition"><Linkedin className="h-3.5 w-3.5" /> LinkedIn</a>
+              <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram profile" className="flex items-center gap-1.5 hover:text-pink-300 transition"><Instagram className="h-3.5 w-3.5" /> Instagram</a>
               <span className="flex items-center gap-1.5"><Cpu className="h-3.5 w-3.5 text-emerald-400" /> Open to opportunities</span>
             </div>
           </motion.div>
