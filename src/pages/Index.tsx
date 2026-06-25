@@ -358,13 +358,22 @@ export default function Index() {
         <div className="absolute -bottom-20 right-0 h-[400px] w-[400px] rounded-full bg-rose-500/20 blur-[140px] animate-pulse" style={{ animationDuration: "13s" }} />
       </div>
 
+      {/* Skip to content */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-950 focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+      >
+        Skip to main content
+      </a>
+
       {/* Nav */}
       <header
+        role="banner"
         className={`fixed top-0 inset-x-0 z-40 transition-all ${
           scrolled ? "backdrop-blur-xl bg-[#05070d]/70 border-b border-cyan-400/10" : ""
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <nav aria-label="Primary" className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2 font-mono text-sm tracking-wider">
             <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)] animate-pulse" />
             <span className="text-cyan-300">omollo</span>
@@ -397,7 +406,8 @@ export default function Index() {
         </nav>
       </header>
 
-      <main id="top" className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
+      <main id="main-content" role="main" tabIndex={-1} className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
+        <span id="top" aria-hidden="true" />
         {/* HERO */}
         <section className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center min-h-[80vh]">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="space-y-7">
@@ -842,7 +852,7 @@ export default function Index() {
         </Section>
       </main>
 
-      <footer className="relative border-t border-cyan-400/10 py-8">
+      <footer role="contentinfo" className="relative border-t border-cyan-400/10 py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-500">
           <span>© {new Date().getFullYear()} Omollo Charles Omondi · All systems nominal.</span>
           <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> Crafted in Nairobi</span>
