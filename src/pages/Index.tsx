@@ -852,7 +852,7 @@ export default function Index() {
         </Section>
       </main>
 
-      <footer className="relative border-t border-cyan-400/10 py-8">
+      <footer role="contentinfo" className="relative border-t border-cyan-400/10 py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-500">
           <span>© {new Date().getFullYear()} Omollo Charles Omondi · All systems nominal.</span>
           <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> Crafted in Nairobi</span>
