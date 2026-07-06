@@ -365,10 +365,11 @@ export default function Index() {
       {/* Skip to content */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-950 focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+        className="sr-only focus:not-sr-only focus-visible:not-sr-only focus:fixed focus-visible:fixed focus:top-4 focus-visible:top-4 focus:left-4 focus-visible:left-4 focus:z-[100] focus-visible:z-[100] focus:rounded-md focus-visible:rounded-md focus:bg-primary focus-visible:bg-primary focus:px-4 focus-visible:px-4 focus:py-2 focus-visible:py-2 focus:text-sm focus-visible:text-sm focus:font-semibold focus-visible:font-semibold focus:text-primary-foreground focus-visible:text-primary-foreground focus:shadow-lg focus-visible:shadow-lg focus:outline-none focus-visible:outline-none focus:ring-2 focus-visible:ring-2 focus:ring-ring focus-visible:ring-ring focus:ring-offset-2 focus-visible:ring-offset-2 focus:ring-offset-background focus-visible:ring-offset-background"
       >
         Skip to main content
       </a>
+
 
       {/* Nav */}
       <header
