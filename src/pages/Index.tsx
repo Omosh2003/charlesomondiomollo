@@ -5,10 +5,12 @@ import {
   Shield, Code2, Headphones, Database, TrendingUp, Mail, Github, Phone,
   Linkedin, Instagram, MapPin, ExternalLink, Award, Briefcase, GraduationCap,
   X, ChevronRight, Sparkles, Lock, Cpu, Terminal, Download, Brain, Globe,
-  Loader2, CheckCircle2, AlertCircle,
+  Loader2, CheckCircle2, AlertCircle, Moon, Sun,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { useTheme } from "@/hooks/use-theme";
+
 
 import portraitShirt from "@/assets/profile/portrait-shirt.asset.json";
 import varsityBlack from "@/assets/profile/varsity-black.asset.json";
@@ -284,6 +286,8 @@ export default function Index() {
   const [lightbox, setLightbox] = useState<{ src: string; caption?: string } | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [filter, setFilter] = useState<string>("All");
+  const { isDark, toggleTheme } = useTheme();
+
 
   // Contact form state
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
@@ -361,10 +365,11 @@ export default function Index() {
       {/* Skip to content */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-950 focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+        className="sr-only focus:not-sr-only focus-visible:not-sr-only focus:fixed focus-visible:fixed focus:top-4 focus-visible:top-4 focus:left-4 focus-visible:left-4 focus:z-[100] focus-visible:z-[100] focus:rounded-md focus-visible:rounded-md focus:bg-primary focus-visible:bg-primary focus:px-4 focus-visible:px-4 focus:py-2 focus-visible:py-2 focus:text-sm focus-visible:text-sm focus:font-semibold focus-visible:font-semibold focus:text-primary-foreground focus-visible:text-primary-foreground focus:shadow-lg focus-visible:shadow-lg focus:outline-none focus-visible:outline-none focus:ring-2 focus-visible:ring-2 focus:ring-ring focus-visible:ring-ring focus:ring-offset-2 focus-visible:ring-offset-2 focus:ring-offset-background focus-visible:ring-offset-background"
       >
         Skip to main content
       </a>
+
 
       {/* Nav */}
       <header
@@ -388,6 +393,15 @@ export default function Index() {
             ))}
           </ul>
           <div className="hidden sm:flex items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              aria-pressed={isDark}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/5 text-cyan-200 hover:bg-cyan-400/15 hover:text-cyan-100 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d]"
+            >
+              {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+            </button>
             <a
               href={resume.url}
               download
@@ -399,6 +413,7 @@ export default function Index() {
               href={cv.url}
               download
               className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/40 bg-fuchsia-400/10 px-4 py-1.5 text-xs font-medium text-fuchsia-200 hover:bg-fuchsia-400/20 transition"
+
             >
               <Download className="h-3.5 w-3.5" /> CV
             </a>
