@@ -286,6 +286,8 @@ export default function Index() {
   const [lightbox, setLightbox] = useState<{ src: string; caption?: string } | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [filter, setFilter] = useState<string>("All");
+  const { isDark, toggleTheme } = useTheme();
+
 
   // Contact form state
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
