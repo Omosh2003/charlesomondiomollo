@@ -393,6 +393,15 @@ export default function Index() {
             ))}
           </ul>
           <div className="hidden sm:flex items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              aria-pressed={isDark}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/5 text-cyan-200 hover:bg-cyan-400/15 hover:text-cyan-100 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d]"
+            >
+              {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+            </button>
             <a
               href={resume.url}
               download
@@ -404,6 +413,7 @@ export default function Index() {
               href={cv.url}
               download
               className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/40 bg-fuchsia-400/10 px-4 py-1.5 text-xs font-medium text-fuchsia-200 hover:bg-fuchsia-400/20 transition"
+
             >
               <Download className="h-3.5 w-3.5" /> CV
             </a>
