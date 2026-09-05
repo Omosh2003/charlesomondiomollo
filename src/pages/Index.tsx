@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Shield, Code2, Headphones, Database, TrendingUp, Mail, Github, Phone,
-  Linkedin, Instagram, MapPin, ExternalLink, Award, Briefcase, GraduationCap,
+  Linkedin, Instagram, MapPin, ExternalLink, Briefcase,
   X, ChevronRight, Sparkles, Lock, Cpu, Terminal, Download, Brain, Globe,
   Loader2, CheckCircle2, AlertCircle, Moon, Sun,
 } from "lucide-react";
@@ -211,11 +211,6 @@ const projects = [
   },
 ];
 
-const certifications = [
-  { title: "Cisco Ethical Hacker", org: "Cisco Networking Academy", icon: Shield, accent: "emerald" },
-  { title: "IVE Abroad Students Certificate", org: "International Volunteer Experience", icon: GraduationCap, accent: "cyan" },
-];
-
 const achievements = [
   "Strong interest in cybersecurity research, ethical hacking, and emerging threat analysis",
   "Hands-on experience through real-world projects — vulnerability assessments and AI security",
@@ -386,7 +381,7 @@ export default function Index() {
             <span className="text-emerald-300">sec</span>
           </a>
           <ul className="hidden md:flex items-center gap-7 text-sm text-slate-400">
-            {["about", "skills", "experience", "projects", "certifications", "writing", "gallery", "contact"].map((s) => (
+            {["about", "skills", "experience", "projects", "writing", "gallery", "contact"].map((s) => (
               <li key={s}>
                 <a href={`#${s}`} className="hover:text-cyan-300 transition-colors capitalize">{s}</a>
               </li>
@@ -521,32 +516,15 @@ export default function Index() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                 <Stat label="Roles" value="6" />
                 <Stat label="Major project" value="SalamaNet" />
-                <Stat label="Certifications" value="2" />
+                <Stat label="Focus" value="AI Security" />
                 <Stat label="Toolchain" value="3+" />
               </div>
             </div>
           </div>
         </Section>
 
-        {/* EDUCATION */}
-        <Section id="education" eyebrow="02 / education" title="Academic foundation.">
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-slate-900/70 to-slate-900/30 backdrop-blur-xl p-8 md:p-10">
-            <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-cyan-500/20 blur-3xl" />
-            <div className="relative flex flex-col md:flex-row gap-6 items-start md:items-center">
-              <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-950 shadow-lg shadow-cyan-500/30">
-                <GraduationCap className="h-8 w-8" />
-              </div>
-              <div className="flex-1">
-                <div className="font-mono text-xs text-cyan-300">Expected Graduation · 2026</div>
-                <h3 className="mt-1 text-2xl font-semibold">Bachelor's Degree in Business and Technical Management</h3>
-                <p className="text-slate-400 mt-1">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</p>
-              </div>
-            </div>
-          </div>
-        </Section>
-
         {/* SKILLS */}
-        <Section id="skills" eyebrow="03 / skills" title="The stack I defend with.">
+        <Section id="skills" eyebrow="02 / skills" title="The stack I defend with.">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {skillGroups.map((s, i) => (
               <motion.div
@@ -583,7 +561,7 @@ export default function Index() {
         </Section>
 
         {/* EXPERIENCE */}
-        <Section id="experience" eyebrow="04 / experience" title="From the shop floor to the SOC.">
+        <Section id="experience" eyebrow="03 / experience" title="From the shop floor to the SOC.">
           <ol className="relative space-y-10 before:absolute before:left-4 md:before:left-1/2 before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-cyan-400/80 before:via-fuchsia-400/60 before:via-violet-400/50 before:to-amber-400/40">
             {experience.map((e, i) => (
               <motion.li
@@ -625,7 +603,7 @@ export default function Index() {
         </Section>
 
         {/* PROJECTS */}
-        <Section id="projects" eyebrow="05 / projects" title="Selected work.">
+        <Section id="projects" eyebrow="04 / projects" title="Selected work.">
           <div className="grid lg:grid-cols-3 gap-6">
             {projects.map((p, i) => (
               <motion.article
@@ -662,26 +640,8 @@ export default function Index() {
           </div>
         </Section>
 
-        {/* CERTIFICATIONS */}
-        <Section id="certifications" eyebrow="06 / certifications" title="Verified credentials.">
-          <div className="grid md:grid-cols-2 gap-5">
-            {certifications.map((c) => (
-              <div key={c.title} className="group flex items-start gap-4 rounded-2xl border border-cyan-400/10 bg-slate-900/50 backdrop-blur-xl p-6 hover:border-emerald-400/40 transition">
-                <div className={`h-12 w-12 flex-shrink-0 rounded-xl bg-${c.accent}-400/10 border border-${c.accent}-400/30 flex items-center justify-center text-${c.accent}-300`}>
-                  <c.icon className="h-6 w-6" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-slate-100">{c.title}</h3>
-                  <div className="text-sm text-slate-400 mt-0.5">{c.org}</div>
-                </div>
-                <Award className="h-5 w-5 text-emerald-400/60 group-hover:text-emerald-300 transition" />
-              </div>
-            ))}
-          </div>
-        </Section>
-
         {/* WRITING */}
-        <Section id="writing" eyebrow="06.5 / writing" title="From the blog.">
+        <Section id="writing" eyebrow="05 / writing" title="From the blog.">
           <Link
             to="/blog/phishing-guide"
             className="group block rounded-2xl border border-cyan-400/10 bg-slate-900/50 backdrop-blur-xl p-6 hover:border-fuchsia-400/40 transition"
@@ -701,7 +661,7 @@ export default function Index() {
         </Section>
 
         {/* ACHIEVEMENTS */}
-        <Section id="achievements" eyebrow="07 / achievements" title="Activities & strengths.">
+        <Section id="achievements" eyebrow="06 / achievements" title="Activities & strengths.">
           <div className="grid md:grid-cols-2 gap-4">
             {achievements.map((a, i) => (
               <motion.div
@@ -720,7 +680,7 @@ export default function Index() {
         </Section>
 
         {/* GALLERY */}
-        <Section id="gallery" eyebrow="08 / gallery" title="Moments & milestones.">
+        <Section id="gallery" eyebrow="07 / gallery" title="Moments & milestones.">
           <div className="flex flex-wrap gap-2 mb-6">
             {cats.map((c) => (
               <button
@@ -767,7 +727,7 @@ export default function Index() {
         </Section>
 
         {/* CONTACT */}
-        <Section id="contact" eyebrow="09 / contact" title="Let's build something secure.">
+        <Section id="contact" eyebrow="08 / contact" title="Let's build something secure.">
           <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-slate-900/80 to-slate-900/30 backdrop-blur-xl p-10 md:p-14">
             <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-cyan-500/20 blur-3xl" />
             <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-blue-500/20 blur-3xl" />
