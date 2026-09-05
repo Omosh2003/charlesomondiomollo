@@ -523,23 +523,6 @@ export default function Index() {
           </div>
         </Section>
 
-        {/* EDUCATION */}
-        <Section id="education" eyebrow="02 / education" title="Academic foundation.">
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-slate-900/70 to-slate-900/30 backdrop-blur-xl p-8 md:p-10">
-            <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-cyan-500/20 blur-3xl" />
-            <div className="relative flex flex-col md:flex-row gap-6 items-start md:items-center">
-              <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-950 shadow-lg shadow-cyan-500/30">
-                <GraduationCap className="h-8 w-8" />
-              </div>
-              <div className="flex-1">
-                <div className="font-mono text-xs text-cyan-300">Expected Graduation · 2026</div>
-                <h3 className="mt-1 text-2xl font-semibold">Bachelor's Degree in Business and Technical Management</h3>
-                <p className="text-slate-400 mt-1">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</p>
-              </div>
-            </div>
-          </div>
-        </Section>
-
         {/* SKILLS */}
         <Section id="skills" eyebrow="03 / skills" title="The stack I defend with.">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
