@@ -211,11 +211,6 @@ const projects = [
   },
 ];
 
-const certifications = [
-  { title: "Cisco Ethical Hacker", org: "Cisco Networking Academy", icon: Shield, accent: "emerald" },
-  { title: "IVE Abroad Students Certificate", org: "International Volunteer Experience", icon: GraduationCap, accent: "cyan" },
-];
-
 const achievements = [
   "Strong interest in cybersecurity research, ethical hacking, and emerging threat analysis",
   "Hands-on experience through real-world projects — vulnerability assessments and AI security",
