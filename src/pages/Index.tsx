@@ -516,7 +516,7 @@ export default function Index() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                 <Stat label="Roles" value="6" />
                 <Stat label="Major project" value="SalamaNet" />
-                <Stat label="Certifications" value="2" />
+                <Stat label="Focus" value="AI Security" />
                 <Stat label="Toolchain" value="3+" />
               </div>
             </div>
