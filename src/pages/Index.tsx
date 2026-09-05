@@ -640,24 +640,6 @@ export default function Index() {
           </div>
         </Section>
 
-        {/* CERTIFICATIONS */}
-        <Section id="certifications" eyebrow="06 / certifications" title="Verified credentials.">
-          <div className="grid md:grid-cols-2 gap-5">
-            {certifications.map((c) => (
-              <div key={c.title} className="group flex items-start gap-4 rounded-2xl border border-cyan-400/10 bg-slate-900/50 backdrop-blur-xl p-6 hover:border-emerald-400/40 transition">
-                <div className={`h-12 w-12 flex-shrink-0 rounded-xl bg-${c.accent}-400/10 border border-${c.accent}-400/30 flex items-center justify-center text-${c.accent}-300`}>
-                  <c.icon className="h-6 w-6" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-slate-100">{c.title}</h3>
-                  <div className="text-sm text-slate-400 mt-0.5">{c.org}</div>
-                </div>
-                <Award className="h-5 w-5 text-emerald-400/60 group-hover:text-emerald-300 transition" />
-              </div>
-            ))}
-          </div>
-        </Section>
-
         {/* WRITING */}
         <Section id="writing" eyebrow="06.5 / writing" title="From the blog.">
           <Link
