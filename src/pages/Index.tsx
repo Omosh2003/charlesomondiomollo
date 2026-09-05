@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Shield, Code2, Headphones, Database, TrendingUp, Mail, Github, Phone,
-  Linkedin, Instagram, MapPin, ExternalLink, Award, Briefcase, GraduationCap,
+  Linkedin, Instagram, MapPin, ExternalLink, Briefcase,
   X, ChevronRight, Sparkles, Lock, Cpu, Terminal, Download, Brain, Globe,
   Loader2, CheckCircle2, AlertCircle, Moon, Sun,
 } from "lucide-react";
