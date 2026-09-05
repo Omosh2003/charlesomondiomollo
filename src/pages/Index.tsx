@@ -381,7 +381,7 @@ export default function Index() {
             <span className="text-emerald-300">sec</span>
           </a>
           <ul className="hidden md:flex items-center gap-7 text-sm text-slate-400">
-            {["about", "skills", "experience", "projects", "certifications", "writing", "gallery", "contact"].map((s) => (
+            {["about", "skills", "experience", "projects", "writing", "gallery", "contact"].map((s) => (
               <li key={s}>
                 <a href={`#${s}`} className="hover:text-cyan-300 transition-colors capitalize">{s}</a>
               </li>
