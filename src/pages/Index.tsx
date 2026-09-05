@@ -524,7 +524,7 @@ export default function Index() {
         </Section>
 
         {/* SKILLS */}
-        <Section id="skills" eyebrow="03 / skills" title="The stack I defend with.">
+        <Section id="skills" eyebrow="02 / skills" title="The stack I defend with.">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {skillGroups.map((s, i) => (
               <motion.div
@@ -561,7 +561,7 @@ export default function Index() {
         </Section>
 
         {/* EXPERIENCE */}
-        <Section id="experience" eyebrow="04 / experience" title="From the shop floor to the SOC.">
+        <Section id="experience" eyebrow="03 / experience" title="From the shop floor to the SOC.">
           <ol className="relative space-y-10 before:absolute before:left-4 md:before:left-1/2 before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-cyan-400/80 before:via-fuchsia-400/60 before:via-violet-400/50 before:to-amber-400/40">
             {experience.map((e, i) => (
               <motion.li
@@ -603,7 +603,7 @@ export default function Index() {
         </Section>
 
         {/* PROJECTS */}
-        <Section id="projects" eyebrow="05 / projects" title="Selected work.">
+        <Section id="projects" eyebrow="04 / projects" title="Selected work.">
           <div className="grid lg:grid-cols-3 gap-6">
             {projects.map((p, i) => (
               <motion.article
@@ -641,7 +641,7 @@ export default function Index() {
         </Section>
 
         {/* WRITING */}
-        <Section id="writing" eyebrow="06.5 / writing" title="From the blog.">
+        <Section id="writing" eyebrow="05 / writing" title="From the blog.">
           <Link
             to="/blog/phishing-guide"
             className="group block rounded-2xl border border-cyan-400/10 bg-slate-900/50 backdrop-blur-xl p-6 hover:border-fuchsia-400/40 transition"
@@ -661,7 +661,7 @@ export default function Index() {
         </Section>
 
         {/* ACHIEVEMENTS */}
-        <Section id="achievements" eyebrow="07 / achievements" title="Activities & strengths.">
+        <Section id="achievements" eyebrow="06 / achievements" title="Activities & strengths.">
           <div className="grid md:grid-cols-2 gap-4">
             {achievements.map((a, i) => (
               <motion.div
@@ -680,7 +680,7 @@ export default function Index() {
         </Section>
 
         {/* GALLERY */}
-        <Section id="gallery" eyebrow="08 / gallery" title="Moments & milestones.">
+        <Section id="gallery" eyebrow="07 / gallery" title="Moments & milestones.">
           <div className="flex flex-wrap gap-2 mb-6">
             {cats.map((c) => (
               <button
@@ -727,7 +727,7 @@ export default function Index() {
         </Section>
 
         {/* CONTACT */}
-        <Section id="contact" eyebrow="09 / contact" title="Let's build something secure.">
+        <Section id="contact" eyebrow="08 / contact" title="Let's build something secure.">
           <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-slate-900/80 to-slate-900/30 backdrop-blur-xl p-10 md:p-14">
             <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-cyan-500/20 blur-3xl" />
             <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-blue-500/20 blur-3xl" />
