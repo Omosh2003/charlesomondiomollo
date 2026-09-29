@@ -383,7 +383,11 @@ export default function Index() {
           <ul className="hidden md:flex items-center gap-7 text-sm text-slate-400">
             {["about", "skills", "experience", "projects", "writing", "gallery", "contact"].map((s) => (
               <li key={s}>
-                <a href={`#${s}`} className="hover:text-cyan-300 transition-colors capitalize">{s}</a>
+                {s === "projects" ? (
+                  <Link to="/projects" className="hover:text-cyan-300 transition-colors capitalize">{s}</Link>
+                ) : (
+                  <a href={`#${s}`} className="hover:text-cyan-300 transition-colors capitalize">{s}</a>
+                )}
               </li>
             ))}
           </ul>
@@ -637,6 +641,11 @@ export default function Index() {
                 </div>
               </motion.article>
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/projects" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-cyan-400/30 bg-cyan-400/5 text-cyan-200 hover:bg-cyan-400/15 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+              View all projects →
+            </Link>
           </div>
         </Section>
 
