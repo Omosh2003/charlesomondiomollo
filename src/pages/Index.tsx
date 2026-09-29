@@ -23,6 +23,7 @@ import usiuVarsity from "@/assets/profile/usiu-varsity.asset.json";
 import techWeekRolls from "@/assets/profile/tech-week-rolls.asset.json";
 import resume from "@/assets/profile/resume.asset.json";
 import cv from "@/assets/profile/cv.asset.json";
+import emobilisLab from "@/assets/profile/emobilis-lab.asset.json";
 
 const CONTACT = {
   email: "charlesomondi2003@gmail.com",
@@ -86,6 +87,20 @@ const skillGroups = [
 ];
 
 const experience = [
+  {
+    company: "eMobilis",
+    role: "IT & Support",
+    period: "2026",
+    tag: "IT Support",
+    img: emobilisLab.url,
+    imgAlt: "Charles Omondi in a black varsity jacket and staff lanyard in the eMobilis computer lab, where he works in IT & Support.",
+    points: [
+      "Maintained and troubleshot computer lab workstations, peripherals, and network connectivity",
+      "Provided day-to-day technical support to students, trainers, and staff",
+      "Set up, configured, and updated hardware and software for training sessions",
+      "Logged and resolved support requests promptly to minimise downtime",
+    ],
+  },
   {
     company: "Optiven Limited",
     role: "Data Management & Leads Administrator",
