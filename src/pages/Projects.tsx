@@ -105,7 +105,7 @@ const Projects = () => (
             className="grid md:grid-cols-5 overflow-hidden rounded-3xl border border-cyan-400/10 bg-slate-900/50 backdrop-blur-xl"
           >
             <div className="md:col-span-2 aspect-[16/10] md:aspect-auto bg-slate-950">
-              <img src={p.img} alt={p.imgAlt} loading="lazy" className="w-full h-full object-cover object-top" />
+              <img src={p.img} alt={p.imgAlt} loading="lazy" className="w-full h-full object-contain" />
             </div>
             <div className="md:col-span-3 p-7">
               <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-full bg-gradient-to-r ${p.accent} text-slate-950 font-bold`}>
