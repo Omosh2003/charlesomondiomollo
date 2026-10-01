@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import FittedImage from "@/components/FittedImage";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Shield, Code2, Headphones, Database, TrendingUp, Mail, Github, Phone,
@@ -508,7 +509,7 @@ export default function Index() {
             <div className="grid grid-cols-3 gap-3">
               {ABOUT_IMGS.map(({ src, alt }, i) => (
                 <button key={src} onClick={() => setLightbox({ src, caption: alt })} className={`group relative overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"}`}>
-                  <img src={src} alt={alt} loading="lazy" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" />
+                  <FittedImage src={src} alt={alt} className="group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition" />
                 </button>
               ))}
@@ -596,7 +597,7 @@ export default function Index() {
                   onClick={() => setLightbox({ src: e.img, caption: `${e.role} — ${e.company}` })}
                   className="block ml-12 md:ml-0 mb-4 md:mb-0 overflow-hidden rounded-2xl border border-cyan-400/10 bg-slate-950 aspect-[4/3] w-full group"
                 >
-                  <img src={e.img} alt={e.imgAlt ?? `${e.role} at ${e.company}`} loading="lazy" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+                  <FittedImage src={e.img} alt={e.imgAlt ?? `${e.role} at ${e.company}`} className="group-hover:scale-105" />
                 </button>
                 <div className="ml-12 md:ml-0 rounded-2xl border border-cyan-400/10 bg-slate-900/60 backdrop-blur-xl p-6">
                   <div className="flex items-center justify-between flex-wrap gap-2">
@@ -636,7 +637,7 @@ export default function Index() {
                 }`}
               >
                 <button onClick={() => setLightbox({ src: p.img, caption: p.title })} className="block overflow-hidden aspect-[16/9] w-full bg-slate-950">
-                  <img src={p.img} alt={p.imgAlt ?? p.title} loading="lazy" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+                  <FittedImage src={p.img} alt={p.imgAlt ?? p.title} className="group-hover:scale-105" />
                 </button>
                 <div className={`absolute -top-32 -right-32 h-64 w-64 rounded-full bg-gradient-to-br ${p.accent} opacity-20 blur-3xl group-hover:opacity-40 transition pointer-events-none`} />
                 <div className="relative p-7">
