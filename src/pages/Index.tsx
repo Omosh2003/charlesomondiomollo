@@ -488,14 +488,14 @@ export default function Index() {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative mx-auto w-full max-w-md">
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative mx-auto w-full max-w-[19rem] sm:max-w-sm md:max-w-md lg:max-w-lg order-first lg:order-none my-4">
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-cyan-500/40 via-blue-400/20 to-fuchsia-500/30 blur-2xl" />
-            <div className="relative rounded-[2rem] border border-cyan-400/20 bg-slate-900/40 backdrop-blur-xl p-3 shadow-2xl">
-              <button onClick={() => setLightbox({ src: HERO_IMG, caption: "Omollo Charles Omondi" })} className="block w-full overflow-hidden rounded-[1.5rem] aspect-[4/5] group bg-slate-950">
-                <img src={HERO_IMG} alt="Studio portrait of Omollo Charles Omondi in a formal shirt and tie — Cybersecurity Specialist, Software Engineer and AI Security Researcher based in Nairobi." loading="eager" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+            <div className="relative rounded-[2rem] border border-cyan-400/20 bg-slate-900/40 backdrop-blur-xl p-2 sm:p-3 shadow-2xl">
+              <button onClick={() => setLightbox({ src: HERO_IMG, caption: "Omollo Charles Omondi" })} aria-label="View full portrait" className="block w-full overflow-hidden rounded-[1.5rem] aspect-[3/4] group bg-slate-950">
+                <img src={HERO_IMG} alt="Studio portrait of Omollo Charles Omondi in a formal shirt and tie — Cybersecurity Specialist, Software Engineer and AI Security Researcher based in Nairobi." loading="eager" decoding="async" className="w-full h-full object-cover object-[50%_20%] transition-transform duration-700 group-hover:scale-[1.03]" />
               </button>
-              <div className="absolute top-6 left-6 rounded-full bg-slate-950/80 backdrop-blur px-3 py-1 text-[10px] font-mono text-emerald-300 border border-emerald-400/30">● LIVE</div>
-              <div className="absolute bottom-6 right-6 rounded-xl bg-slate-950/80 backdrop-blur px-3 py-2 text-[10px] font-mono text-cyan-200 border border-cyan-400/20">
+              <div className="absolute -top-3 left-6 rounded-full bg-slate-950/90 backdrop-blur px-3 py-1 text-[10px] font-mono text-emerald-300 border border-emerald-400/30">● LIVE</div>
+              <div className="absolute -bottom-3 right-6 rounded-xl bg-slate-950/90 backdrop-blur px-3 py-2 text-[10px] font-mono text-cyan-200 border border-cyan-400/20">
                 threat_level: <span className="text-emerald-300">low</span>
               </div>
             </div>
